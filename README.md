@@ -15,7 +15,7 @@ python network_inference.py -i model_vgg_f/best_network.pth -m data/real/panda-3
 ```
 
 # Plotting 
-# OKS for PCK
+## OKS for PCK
 
 ```shell
 python oks_plots.py --data output_vgg_f_0603/keypoints.csv output_vgg_f_mha_0605/keypoints.csv output_vgg_f_attlast_0607/keypoints.csv output_vgg_f_transformer_0605/keypoints.csv \
@@ -23,14 +23,14 @@ python oks_plots.py --data output_vgg_f_0603/keypoints.csv output_vgg_f_mha_0605
 
 ```
 
-# ADD for PnP
+## ADD for PnP
 
 ```shell
 python add_plots.py --data  output_vgg_f_0603/pnp_results.csv output_vgg_f_mha_0605/pnp_results.csv output_vgg_f_attlast_0607/pnp_results.csv output_vgg_f_transformer_0605/pnp_results.csv \
 --show --output "vgg_f_mha_0605_ADD" --colours 0 1 2 3 4 --labels "VGG" "VGG-MHA" "VGG-Att" "VGG-Transformer"
 ```
 
-# Run Both at once 
+## Run Both at once 
 ```shell
 bash visualization.sh
 ``` 
