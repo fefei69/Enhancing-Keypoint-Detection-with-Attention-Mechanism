@@ -1,0 +1,80 @@
+!!omap
+- data_path: data/synthetic/panda_synth_train_dr/
+- manipulator: !!omap
+  - name: panda
+  - keypoints:
+    - name: panda_link0
+      friendly_name: Base
+      ros_frame: panda_link0
+    - name: panda_link2
+      friendly_name: Joint2
+      ros_frame: panda_link2
+    - name: panda_link3
+      friendly_name: Joint3
+      ros_frame: panda_link3
+    - name: panda_link4
+      friendly_name: Joint4
+      ros_frame: panda_link4
+    - name: panda_link6
+      friendly_name: Joint6
+      ros_frame: panda_link6
+    - name: panda_link7
+      friendly_name: Joint7
+      ros_frame: panda_link7
+    - name: panda_hand
+      friendly_name: Hand
+      ros_frame: panda_hand
+- architecture: !!omap
+  - type: vgg
+  - target: belief_maps
+  - deconv_decoder: true
+  - input_heads:
+    - image_rgb
+  - output_heads:
+    - belief_maps
+  - image_normalization: !!omap
+    - mean:
+      - 0.5
+      - 0.5
+      - 0.5
+    - stdev:
+      - 0.5
+      - 0.5
+      - 0.5
+  - loss: !!omap
+    - type: mse
+  - image_preprocessing: shrink-and-crop
+- training: !!omap
+  - config: !!omap
+    - epochs: 25
+    - training_data_fraction: 0.8
+    - validation_data_fraction: 0.19999999999999996
+    - batch_size: 128
+    - data_augmentation: !!omap
+      - image_rgb: true
+    - worker_size: 16
+    - optimizer: !!omap
+      - type: adam
+      - learning_rate: 0.00015
+    - image_preprocessing: shrink-and-crop
+    - image_raw_resolution:
+      - 640
+      - 480
+    - net_input_resolution:
+      - 400
+      - 400
+    - net_output_resolution:
+      - 400
+      - 400
+  - platform: !!omap
+    - user: not found
+    - hostname: 69cfcdd1f77e
+    - gpu_ids: []
+  - results: !!omap
+    - epochs_trained: 17
+    - training_loss: !!omap
+      - mean: 2.6729076253132407e-05
+      - stdev: 1.5270561433527098e-06
+    - validation_loss: !!omap
+      - mean: 2.9281051827252447e-05
+      - stdev: 2.02570762513297e-06
