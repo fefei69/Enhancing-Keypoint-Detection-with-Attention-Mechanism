@@ -8,12 +8,13 @@
 </p>
 
 
-<div align="center">
+
 
 ## Experiments Results
 Performance Comparison of percentage out-of-frame gt keypoints not found (correct),
 percentage in-frame gt keypoints found (correct) and L2 error (px) for in-frame keypoints area under the curve (AUC)
 
+<div align="center">
 
 | **Model**          | **Out-of-frame** | **In-frame** | **In-frame AUC** |
 |--------------------|------------------|--------------|------------------|
