@@ -1,21 +1,41 @@
 [Report of the project](https://drive.google.com/file/d/1kfFgt6tH3ZoA3aqDwPEZPkCZexhNW4yv/view?usp=sharing)
-# Training 
+
+## Pose keypoints perfectly detected (Left) Pose of missing keypoints prediction with occuled/overlapped joints (Right) 
+<center>
+<img src="images/vgg_f_0603.PNG" alt="isolated" width="300"/>
+<img src="images/vgg_f_0603_angle2.PNG" alt="isolated" width="300"/>
+<center>
+
+
+## Experiments Results
+Performance Comparison of percentage out-of-frame gt keypoints not found (correct),
+percentage in-frame gt keypoints found (correct) and L2 error (px) for in-frame keypoints area under the curve (AUC)
+
+| **Model**          | **Out-of-frame** | **In-frame** | **In-frame AUC** |
+|--------------------|------------------|--------------|------------------|
+| VGG                | 68.76            | 89.87        | 65.18            |
+| VGG-MHA            | **99.52**        | 85.71        | 65.65            |
+| VGG-ATT            | 98.74            | **89.91**    | **67.72**        |
+| VGG-Transformer    | 98.27            | 86.28        | 62.70            |
+
+
+## Training 
 
 ```shell
 python train_network.py -i data/synthetic/panda_synth_train_dr/ -t 0.8 -m manip_configs/panda.yaml -ar arch_configs/dream_vgg_f_attlast.yaml -e 1 -lr 0.00015 -b 128 -w 16 -o model_vgg_f_attlast_0607
 ```
 
-# Azure Dataset Inference
+## Azure Dataset Inference
 ```shell
 python network_inference_dataset.py -i model_vgg_f_attlast_0607/best_network.pth -d data/real/panda-3cam_azure/ -o output_vgg_f_attlast_0607 -b 16 -w 8
 ```
-# Single Image Inference
+## Single Image Inference
 ```shell
 python network_inference.py -i model_vgg_f/best_network.pth -m data/real/panda-3cam_azure/000000.rgb.jpg
 ```
 
-# Plotting 
-## OKS for PCK
+## Plotting 
+### OKS for PCK
 
 ```shell
 python oks_plots.py --data output_vgg_f_0603/keypoints.csv output_vgg_f_mha_0605/keypoints.csv output_vgg_f_attlast_0607/keypoints.csv output_vgg_f_transformer_0605/keypoints.csv \
@@ -23,7 +43,7 @@ python oks_plots.py --data output_vgg_f_0603/keypoints.csv output_vgg_f_mha_0605
 
 ```
 
-## ADD for PnP
+### ADD for PnP
 
 ```shell
 python add_plots.py --data  output_vgg_f_0603/pnp_results.csv output_vgg_f_mha_0605/pnp_results.csv output_vgg_f_attlast_0607/pnp_results.csv output_vgg_f_transformer_0605/pnp_results.csv \
