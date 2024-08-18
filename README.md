@@ -2,14 +2,16 @@
 
 ## Pose keypoints perfectly detected (Left) Pose of missing keypoints prediction with occuled/overlapped joints (Right) 
 <center>
-<img src="images/vgg_f_0603.PNG" alt="vgg_f_0603" width="300"/>
-<img src="images/vgg_f_0603_angle2.PNG" alt="vgg_f_0603_angle2" width="300"/>
-<center>
+<img src="images/vgg_f_0603.PNG" alt="vgg_f_0603" width="200"/>
+<img src="images/vgg_f_0603_angle2.PNG" alt="vgg_f_0603_angle2" width="200"/>
+</center>
 
 
 ## Experiments Results
 Performance Comparison of percentage out-of-frame gt keypoints not found (correct),
 percentage in-frame gt keypoints found (correct) and L2 error (px) for in-frame keypoints area under the curve (AUC)
+
+<center>
 
 | **Model**          | **Out-of-frame** | **In-frame** | **In-frame AUC** |
 |--------------------|------------------|--------------|------------------|
@@ -18,6 +20,7 @@ percentage in-frame gt keypoints found (correct) and L2 error (px) for in-frame 
 | VGG-ATT            | 98.74            | **89.91**    | **67.72**        |
 | VGG-Transformer    | 98.27            | 86.28        | 62.70            |
 
+</center>
 
 ## Training 
 
