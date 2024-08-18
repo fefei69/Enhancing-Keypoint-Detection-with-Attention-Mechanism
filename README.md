@@ -18,7 +18,7 @@ percentage in-frame gt keypoints found (correct) and L2 error (px) for in-frame 
 
 | **Model**          | **Out-of-frame** | **In-frame** | **In-frame AUC** |
 |--------------------|------------------|--------------|------------------|
-| VGG                | 68.76            | 89.87        | 65.18            |
+| VGG (Basline)      | 68.76            | 89.87        | 65.18            |
 | VGG-MHA            | **99.52**        | 85.71        | 65.65            |
 | VGG-ATT            | 98.74            | **89.91**    | **67.72**        |
 | VGG-Transformer    | 98.27            | 86.28        | 62.70            |
