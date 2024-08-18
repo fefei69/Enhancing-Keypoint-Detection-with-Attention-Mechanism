@@ -2,8 +2,7 @@
 
 ## Pose keypoints perfectly detected (Left) Pose of missing keypoints prediction with occuled/overlapped joints (Right) 
 <center>
-<img src="images/vgg_f_0603.PNG" alt="vgg_f_0603" width="200"/>
-<img src="images/vgg_f_0603_angle2.PNG" alt="vgg_f_0603_angle2" width="200"/>
+<img src="images/vgg_f_0603.PNG" alt="vgg_f_0603" width="200"/><img src="images/vgg_f_0603_angle2.PNG" alt="vgg_f_0603_angle2" width="200"/>
 </center>
 
 
