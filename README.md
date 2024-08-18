@@ -1,9 +1,10 @@
 [Report of the project](https://drive.google.com/file/d/1kfFgt6tH3ZoA3aqDwPEZPkCZexhNW4yv/view?usp=sharing)
 
 ## Pose keypoints perfectly detected (Left) Pose of missing keypoints prediction with occuled/overlapped joints (Right) 
-<center>
-<img src="images/vgg_f_0603.PNG" alt="vgg_f_0603" width="200"/><img src="images/vgg_f_0603_angle2.PNG" alt="vgg_f_0603_angle2" width="200"/>
-</center>
+
+<p align="center">
+<img width="300" src="images/vgg_f_0603.PNG"><img width="300" src="images/vgg_f_0603_angle2.PNG">
+</p>
 
 
 ## Experiments Results
